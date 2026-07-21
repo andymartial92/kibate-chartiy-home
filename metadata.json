@@ -1,6 +1,6 @@
 {
-  "name": "Jago Welfare",
-  "description": "Jago Welfare - Charity, Crowdfunding and Non-Profit Organization Platform",
+  "name": "Kibate Charity Home",
+  "description": "Kibate Charity Home - Crowdfunding and Non-Profit Charity Organization Platform",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

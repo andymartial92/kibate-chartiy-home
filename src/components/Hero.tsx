@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonate }) => {
             </h1>
 
             <p className="text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed">
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a type and scrambled.
+              Every child deserves hope, education, clean water, and a bright future. Join Kibate Charity Home to empower vulnerable children and families in need.
             </p>
 
             <div className="pt-2">
@@ -61,13 +61,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonate }) => {
               {/* Main Orange Organic Blob */}
               <div className="absolute w-[82%] h-[82%] bg-[#F88D2B] rounded-[45%_55%_60%_40%/50%_45%_55%_50%] shadow-lg transition-all duration-700"></div>
 
-              {/* Central Person Image */}
-              <div className="relative z-10 w-[78%] h-[88%] flex items-end justify-center overflow-hidden rounded-b-full">
+              {/* Central Children Image */}
+              <div className="relative z-10 w-[80%] h-[90%] flex items-center justify-center overflow-hidden rounded-3xl shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
-                  alt="Volunteer sharing donations"
-                  className="w-full h-full object-cover object-top filter contrast-[1.03]"
-                  referrerPolicy="no-referrer"
+                  src="/src/assets/images/hero_children_1784665722619.jpg"
+                  alt="Children at Kibate Charity Home"
+                  className="w-full h-full object-cover filter contrast-[1.03]"
                 />
               </div>
 

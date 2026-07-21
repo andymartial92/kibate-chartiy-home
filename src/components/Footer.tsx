@@ -9,20 +9,20 @@ export const Footer: React.FC = () => {
         {/* Main 4 Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
           
-          {/* Column 1: Jago Welfare Info */}
+          {/* Column 1: Kibate Charity Home Info */}
           <div className="space-y-4">
             <a href="#home" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center relative overflow-hidden">
                 <Heart className="w-4 h-4 text-[#E5533D] fill-[#E5533D]" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="font-bold text-xl text-white tracking-tight">Jago</span>
-                <span className="font-normal text-xl text-slate-400">welfare</span>
+                <span className="font-bold text-lg text-white tracking-tight">Kibate</span>
+                <span className="font-normal text-lg text-[#E5533D]">Charity Home</span>
               </div>
             </a>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.
+              Dedicated to ending poverty, providing clean water, supporting children's education, and offering healthcare for communities in need.
             </p>
 
             <div className="space-y-2 text-xs pt-2">
@@ -32,11 +32,11 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-[#E5533D] flex-shrink-0" />
-                <span><strong className="text-slate-200">Phone:</strong> +011 234 567 89</span>
+                <span><strong className="text-slate-200">Phone:</strong> +256 771450806</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#E5533D] flex-shrink-0" />
-                <span><strong className="text-slate-200">Email:</strong> info@jagowelfare.com</span>
+                <span><strong className="text-slate-200">Email:</strong> info@kibatecharityhome.org</span>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
               <div className="flex space-x-2">
                 <Twitter className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <a href="#" className="text-sky-400 font-semibold hover:underline block">@JagoMarketing</a>
+                  <a href="#" className="text-sky-400 font-semibold hover:underline block">@KibateCharity</a>
                   <p className="text-slate-400 leading-relaxed">
                     Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor...
                   </p>

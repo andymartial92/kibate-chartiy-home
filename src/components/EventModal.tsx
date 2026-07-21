@@ -50,6 +50,11 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
+            {event.image && (
+              <div className="w-full h-44 sm:h-52 rounded-2xl overflow-hidden -mt-1 mb-2">
+                <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+              </div>
+            )}
             <div className="space-y-2">
               <span className="text-xs font-bold text-[#E5533D] uppercase tracking-wider block">{event.tag}</span>
               <h3 className="text-xl font-extrabold text-slate-900 leading-snug">{event.title}</h3>

@@ -23,7 +23,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
           <iframe
             className="absolute inset-0 w-full h-full"
             src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-            title="How We Work - Jago Welfare"
+            title="How We Work - Kibate Charity Home"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

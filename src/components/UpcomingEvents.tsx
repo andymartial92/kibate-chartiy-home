@@ -101,6 +101,17 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ onSelectEvent })
                 onClick={() => onSelectEvent(event)}
                 className="bg-slate-50/80 hover:bg-slate-50 border border-slate-100 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-md cursor-pointer flex items-start gap-4 sm:gap-6 relative group"
               >
+                {/* Image Thumbnail if available */}
+                {event.image && (
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden flex-shrink-0 border border-slate-200/80 shadow-xs">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+
                 {/* Text Content */}
                 <div className="flex-1 space-y-2">
                   <span className="text-xs font-bold text-[#E5533D] uppercase tracking-wider block">

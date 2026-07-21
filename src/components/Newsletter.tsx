@@ -38,7 +38,7 @@ export const Newsletter: React.FC = () => {
             {subscribed ? (
               <div className="flex items-center space-x-2 bg-emerald-50 text-emerald-700 p-4 rounded-full border border-emerald-200 text-sm font-semibold justify-center animate-fade-in">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                <span>Thank you for subscribing to Jago Welfare!</span>
+                <span>Thank you for subscribing to Kibate Charity Home!</span>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="relative flex items-center">

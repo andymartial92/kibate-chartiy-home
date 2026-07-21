@@ -83,7 +83,7 @@ export const DonateModal: React.FC<DonateModalProps> = ({
               </div>
               <div>
                 <h3 className="text-xl font-extrabold text-slate-900">Make a Donation</h3>
-                <p className="text-xs text-slate-500">Support Jago Welfare causes directly</p>
+                <p className="text-xs text-slate-500">Support Kibate Charity Home causes directly</p>
               </div>
             </div>
 

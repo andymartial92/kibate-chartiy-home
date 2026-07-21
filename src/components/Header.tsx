@@ -31,9 +31,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
               <Mail className="w-3.5 h-3.5 text-[#E5533D]" />
               <span>donation@domain.com</span>
             </a>
-            <a href="tel:+01123456789" className="flex items-center gap-1.5 hover:text-[#E5533D] transition-colors">
+            <a href="tel:+256771450806" className="flex items-center gap-1.5 hover:text-[#E5533D] transition-colors">
               <Phone className="w-3.5 h-3.5 text-[#E5533D]" />
-              <span>+011 234 567 89</span>
+              <span>+256 771450806</span>
             </a>
             <a href="#faq" className="hover:text-[#E5533D] transition-colors">
               Faq
@@ -72,9 +72,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
               <Heart className="w-4 h-4 text-white z-10 fill-white" />
             </div>
           </div>
-          <div className="flex items-baseline gap-1">
-            <span className="font-bold text-2xl text-slate-900 tracking-tight">Jago</span>
-            <span className="font-normal text-2xl text-slate-600">welfare</span>
+          <div className="flex items-baseline gap-1.5">
+            <span className="font-extrabold text-xl text-slate-900 tracking-tight">Kibate</span>
+            <span className="font-semibold text-xl text-[#E5533D]">Charity Home</span>
           </div>
         </a>
 

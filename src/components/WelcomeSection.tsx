@@ -23,23 +23,21 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ onOpenVideo, onO
                 ))}
               </div>
 
-              {/* Top Main Image */}
+              {/* Top Main Image - Black & White children photo */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white transform -rotate-1 hover:rotate-0 transition-transform duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800"
-                  alt="Children holding hands in unity"
+                  src="/src/assets/images/welcome_bw_kids_1784666216466.jpg"
+                  alt="Children at Kibate Charity Home community"
                   className="w-full h-64 sm:h-80 object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </div>
 
-              {/* Bottom Overlapping Image */}
+              {/* Bottom Overlapping Image - Children with sign */}
               <div className="relative z-20 -mt-20 ml-8 sm:ml-16 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-300 max-w-[85%]">
                 <img
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800"
-                  alt="Happy smiling children"
+                  src="/src/assets/images/welcome_sign_kids_1784666229061.jpg"
+                  alt="Children asking for food and support"
                   className="w-full h-56 sm:h-72 object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </div>
 
@@ -56,7 +54,7 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ onOpenVideo, onO
                 <path d="M6 10C10 4 14 4 18 10" strokeLinecap="round" />
               </svg>
               <span className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
-                Welcome to Jago
+                Welcome to Kibate Charity Home
               </span>
             </div>
 
@@ -76,15 +74,11 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ onOpenVideo, onO
 
             {/* Description Paragraphs */}
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.
+              At Kibate Charity Home, we believe every child deserves a life free from hunger, poverty, and disease. Our mission is to provide nutritious food, clean drinking water, access to education, and compassionate shelter for vulnerable children in underserved communities.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore et simply free text dolore magna aliqua lonm andhn.
-            </p>
-
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore et simply.
+              Through direct community outreach and transparent fundraising, your generous donations go directly towards feeding programs, school supplies, healthcare essentials, and building safe spaces where children can thrive.
             </p>
 
             {/* Action Buttons */}
