@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Cause } from '../types';
-import { Calendar, User, Heart } from 'lucide-react';
+import { Calendar, User, Heart, ArrowRight } from 'lucide-react';
 
 interface TrendingCausesProps {
   causes: Cause[];
   onDonateCause: (cause: Cause) => void;
+  onSelectCause: (cause: Cause) => void;
 }
 
-export const TrendingCauses: React.FC<TrendingCausesProps> = ({ causes, onDonateCause }) => {
+export const TrendingCauses: React.FC<TrendingCausesProps> = ({
+  causes,
+  onDonateCause,
+  onSelectCause,
+}) => {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = ['All', 'Food & Water', 'Education', 'Shelter'];
@@ -27,16 +32,16 @@ export const TrendingCauses: React.FC<TrendingCausesProps> = ({ causes, onDonate
               <path d="M2 14C8 2 16 2 22 14" strokeLinecap="round" />
             </svg>
             <span className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
-              Trending causes
+              Active Campaigns
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-            We are always where other people{' '}
+            We are always where communities{' '}
             <span className="relative inline-block px-2 py-0.5 bg-amber-200/90 rounded-md text-slate-900">
               need
             </span>{' '}
-            help
+            support
           </h2>
         </div>
 
@@ -68,12 +73,14 @@ export const TrendingCauses: React.FC<TrendingCausesProps> = ({ causes, onDonate
                 className="bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col group"
               >
                 {/* Image Container with Tag */}
-                <div className="relative h-56 overflow-hidden">
+                <div
+                  onClick={() => onSelectCause(cause)}
+                  className="relative h-56 overflow-hidden cursor-pointer"
+                >
                   <img
                     src={cause.image}
                     alt={cause.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
                   />
                   {/* Category Tag Badge */}
                   <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20">
@@ -106,7 +113,10 @@ export const TrendingCauses: React.FC<TrendingCausesProps> = ({ causes, onDonate
 
                   {/* Title & Description */}
                   <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#E5533D] transition-colors leading-snug line-clamp-2">
+                    <h3
+                      onClick={() => onSelectCause(cause)}
+                      className="text-lg font-bold text-slate-900 group-hover:text-[#E5533D] transition-colors leading-snug line-clamp-2 cursor-pointer"
+                    >
                       {cause.title}
                     </h3>
                     <p className="text-slate-500 text-xs sm:text-sm line-clamp-3 leading-relaxed">
@@ -114,25 +124,22 @@ export const TrendingCauses: React.FC<TrendingCausesProps> = ({ causes, onDonate
                     </p>
                   </div>
 
-                  {/* Meta Footer */}
+                  {/* Action Buttons */}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center space-x-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                        <span>{cause.date}</span>
-                      </div>
-                      <div className="flex items-center space-x-1.5">
-                        <User className="w-3.5 h-3.5 text-slate-400" />
-                        <span>By {cause.author}</span>
-                      </div>
-                    </div>
+                    <button
+                      onClick={() => onSelectCause(cause)}
+                      className="font-bold text-slate-700 hover:text-[#E5533D] transition-colors flex items-center space-x-1 cursor-pointer"
+                    >
+                      <span>View Story & Breakdown</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
 
                     <button
                       onClick={() => onDonateCause(cause)}
-                      className="p-2 rounded-full text-[#E5533D] hover:bg-orange-50 transition-colors"
-                      title="Donate to this cause"
+                      className="px-4 py-2 bg-[#E5533D] hover:bg-[#d0422d] text-white font-bold text-xs rounded-full shadow-xs transition-colors flex items-center space-x-1 cursor-pointer"
                     >
-                      <Heart className="w-4 h-4 fill-current" />
+                      <Heart className="w-3.5 h-3.5 fill-current" />
+                      <span>Donate</span>
                     </button>
                   </div>
 

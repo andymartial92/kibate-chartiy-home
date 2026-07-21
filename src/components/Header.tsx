@@ -1,24 +1,54 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Search, Menu, X, Facebook, Twitter, Instagram, Linkedin, Heart } from 'lucide-react';
+import { Mail, Phone, Search, Menu, X, Facebook, Twitter, Instagram, Linkedin, Heart, Settings } from 'lucide-react';
 
 interface HeaderProps {
   onOpenDonate: () => void;
   onOpenSearch: () => void;
+  onOpenAbout: () => void;
+  onOpenContact: () => void;
+  onOpenAdmin: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) => {
+export const Header: React.FC<HeaderProps> = ({
+  onOpenDonate,
+  onOpenSearch,
+  onOpenAbout,
+  onOpenContact,
+  onOpenAdmin,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('Home');
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About us', href: '#about' },
-    { name: 'Causes', href: '#causes' },
-    { name: 'Events', href: '#events' },
-    { name: 'Pages', href: '#pages' },
-    { name: 'News', href: '#news' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', action: null },
+    { name: 'About us', href: '#about', action: onOpenAbout },
+    { name: 'Causes', href: '#causes', action: null },
+    { name: 'Events', href: '#events', action: null },
+    { name: 'News', href: '#news', action: null },
+    { name: 'FAQ', href: '#faq', action: null },
+    { name: 'Contact', href: '#contact', action: onOpenContact },
   ];
+
+  const handleNavClick = (item: { name: string; href: string; action: (() => void) | null }) => {
+    setActiveNav(item.name);
+    setMobileMenuOpen(false);
+    if (item.action) {
+      item.action();
+    } else {
+      const el = document.querySelector(item.href);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleSocialClick = (platform: string) => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('Support Kibate Charity Home - Providing food, education, and shelter in Kampala, Uganda!');
+    if (platform === 'facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    if (platform === 'whatsapp') window.open(`https://api.whatsapp.com/send?text=${text}%20${url}`, '_blank');
+  };
 
   return (
     <header className="w-full bg-white sticky top-0 z-40 shadow-xs">
@@ -35,25 +65,43 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
               <Phone className="w-3.5 h-3.5 text-[#E5533D]" />
               <span>+256 771450806</span>
             </a>
-            <a href="#faq" className="hover:text-[#E5533D] transition-colors">
-              Faq
+            <a href="#faq" className="hover:text-[#E5533D] transition-colors font-medium">
+              FAQ
             </a>
           </div>
 
-          {/* Right Socials */}
+          {/* Right Socials & Admin */}
           <div className="flex items-center space-x-3">
-            <a href="#" className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600">
+            <button
+              onClick={() => handleSocialClick('facebook')}
+              aria-label="Share on Facebook"
+              className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600 cursor-pointer"
+            >
               <Facebook className="w-3 h-3" />
-            </a>
-            <a href="#" className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600">
+            </button>
+            <button
+              onClick={() => handleSocialClick('twitter')}
+              aria-label="Share on Twitter"
+              className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600 cursor-pointer"
+            >
               <Twitter className="w-3 h-3" />
-            </a>
-            <a href="#" className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600">
+            </button>
+            <button
+              onClick={() => handleSocialClick('whatsapp')}
+              aria-label="Share on WhatsApp"
+              className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600 cursor-pointer"
+            >
               <Instagram className="w-3 h-3" />
-            </a>
-            <a href="#" className="w-6 h-6 rounded-full bg-slate-200/60 hover:bg-[#E5533D] hover:text-white flex items-center justify-center transition-all text-slate-600">
-              <Linkedin className="w-3 h-3" />
-            </a>
+            </button>
+
+            <button
+              onClick={onOpenAdmin}
+              className="ml-2 flex items-center space-x-1 px-2.5 py-1 bg-slate-200/80 hover:bg-slate-900 hover:text-white rounded-full text-[11px] font-bold text-slate-700 transition-colors cursor-pointer"
+              title="NGO Staff CMS"
+            >
+              <Settings className="w-3 h-3" />
+              <span>Staff CMS</span>
+            </button>
           </div>
         </div>
       </div>
@@ -63,7 +111,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
         {/* Brand Logo */}
         <a href="#home" className="flex items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-full flex items-center justify-center relative overflow-hidden bg-orange-50">
-            {/* Colorful hands / heart logo representation */}
             <div className="relative w-7 h-7 flex items-center justify-center">
               <span className="absolute w-3.5 h-3.5 bg-amber-400 rounded-full top-0 left-0 opacity-90"></span>
               <span className="absolute w-3.5 h-3.5 bg-[#E5533D] rounded-full top-0 right-0 opacity-90"></span>
@@ -79,13 +126,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
         </a>
 
         {/* Desktop Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-7 text-sm font-medium">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.name}
-              href={item.href}
-              onClick={() => setActiveNav(item.name)}
-              className={`transition-colors py-1 relative ${
+              onClick={() => handleNavClick(item)}
+              className={`transition-colors py-1 relative cursor-pointer ${
                 activeNav === item.name
                   ? 'text-[#E5533D] font-semibold'
                   : 'text-slate-700 hover:text-[#E5533D]'
@@ -95,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
               {activeNav === item.name && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#E5533D] rounded-full"></span>
               )}
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -103,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
         <div className="flex items-center space-x-4">
           <button
             onClick={onOpenSearch}
-            className="p-2 text-slate-600 hover:text-[#E5533D] transition-colors rounded-full hover:bg-slate-100"
+            className="p-2 text-slate-600 hover:text-[#E5533D] transition-colors rounded-full hover:bg-slate-100 cursor-pointer"
             aria-label="Search"
           >
             <Search className="w-5 h-5" />
@@ -116,10 +162,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
             Donate now
           </button>
 
-          {/* Mobile menu hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-700 hover:text-[#E5533D]"
+            className="md:hidden p-2 text-slate-700 hover:text-[#E5533D] cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -131,19 +176,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-slate-100 bg-white px-6 py-4 space-y-3 shadow-lg">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.name}
-              href={item.href}
-              onClick={() => {
-                setActiveNav(item.name);
-                setMobileMenuOpen(false);
-              }}
-              className={`block py-2 text-base font-medium ${
+              onClick={() => handleNavClick(item)}
+              className={`block w-full text-left py-2 text-base font-medium cursor-pointer ${
                 activeNav === item.name ? 'text-[#E5533D] font-semibold' : 'text-slate-700'
               }`}
             >
               {item.name}
-            </a>
+            </button>
           ))}
           <div className="pt-2 border-t border-slate-100">
             <button
@@ -151,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
                 setMobileMenuOpen(false);
                 onOpenDonate();
               }}
-              className="w-full py-3 bg-[#E5533D] text-white font-semibold text-sm rounded-full text-center shadow-xs"
+              className="w-full py-3 bg-[#E5533D] text-white font-semibold text-sm rounded-full text-center shadow-xs cursor-pointer"
             >
               Donate now
             </button>

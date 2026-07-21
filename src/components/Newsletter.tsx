@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
+import { addSubscriber } from '../utils/storage';
 
 export const Newsletter: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [alreadyExists, setAlreadyExists] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email.trim()) {
-      setSubscribed(true);
+      const added = addSubscriber(email.trim());
+      if (added) {
+        setSubscribed(true);
+        setAlreadyExists(false);
+      } else {
+        setSubscribed(true);
+        setAlreadyExists(true);
+      }
       setTimeout(() => {
         setSubscribed(false);
         setEmail('');
