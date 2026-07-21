@@ -64,7 +64,7 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ onOpenVideo, onO
               <span className="relative inline-block px-2 py-0.5 bg-amber-200/80 rounded-md text-slate-900">
                 poverty
               </span>{' '}
-              will not exists
+              will not exist
             </h2>
 
             {/* Coral Red Highlight Subtitle */}

@@ -27,9 +27,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDonate, onOpenSearch }) =>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           {/* Left info */}
           <div className="flex items-center space-x-6">
-            <a href="mailto:donation@domain.com" className="flex items-center gap-1.5 hover:text-[#E5533D] transition-colors">
+            <a href="mailto:kibate12@gmail.com" className="flex items-center gap-1.5 hover:text-[#E5533D] transition-colors">
               <Mail className="w-3.5 h-3.5 text-[#E5533D]" />
-              <span>donation@domain.com</span>
+              <span>kibate12@gmail.com</span>
             </a>
             <a href="tel:+256771450806" className="flex items-center gap-1.5 hover:text-[#E5533D] transition-colors">
               <Phone className="w-3.5 h-3.5 text-[#E5533D]" />

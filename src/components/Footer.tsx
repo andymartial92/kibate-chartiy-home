@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-xs pt-2">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-[#E5533D] flex-shrink-0 mt-0.5" />
-                <span><strong className="text-slate-200">Address:</strong> 658 Pronomoid Ave, West Chester, PA 19382</span>
+                <span><strong className="text-slate-200">Address:</strong> Kampala, Uganda</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-[#E5533D] flex-shrink-0" />
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#E5533D] flex-shrink-0" />
-                <span><strong className="text-slate-200">Email:</strong> info@kibatecharityhome.org</span>
+                <span><strong className="text-slate-200">Email:</strong> kibate12@gmail.com</span>
               </div>
             </div>
           </div>
