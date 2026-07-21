@@ -35,12 +35,12 @@ export const INITIAL_CAUSES: Cause[] = [
     category: 'Education',
     tag: '#Education',
     image: '/src/assets/images/cause_education_classroom_1784668322046.jpg',
-    raised: 18000,
+    raised: 12000,
     goal: 20000,
     description: 'Provide vulnerable children with access to quality education, school supplies, learning materials, and safe classrooms.',
     fullStory: `Education is the single most powerful tool to break the intergenerational cycle of poverty. In rural settlements, hundreds of bright young children are forced to stay home because their families cannot afford basic tuition fees, uniforms, or exercise books.
     
-    Kibate Charity Home has constructed open shelter community classrooms and partnered with local certified teachers to provide free daily schooling, literacy training, STEM kits, and school lunch programs. We are now $2,000 away from achieving full funding for the 2026 school year!`,
+    Kibate Charity Home has constructed open shelter community classrooms and partnered with local certified teachers to provide free daily schooling, literacy training, STEM kits, and school lunch programs. We are now $8,000 away from achieving full funding for the 2026 school year!`,
     breakdown: [
       { label: 'Teacher Stipends & Training', percentage: 40, color: '#E5533D' },
       { label: 'Books, Uniforms & Learning Kits', percentage: 35, color: '#3B82F6' },
@@ -63,7 +63,7 @@ export const INITIAL_CAUSES: Cause[] = [
     category: 'Shelter',
     tag: '#HomeLess & Shelter',
     image: '/src/assets/images/cause_shelter_settlement_1784669067541.jpg',
-    raised: 25000,
+    raised: 700,
     goal: 50000,
     description: 'Building secure housing, improving community infrastructure, and providing clean shelter for families living in underserved settlements.',
     fullStory: `Living in flimsy, leaking structures leaves children vulnerable to extreme weather, vector-borne illnesses, and safety risks. Kibate Charity Home is actively building durable brick homes, reinforcing thatched roofing with weather-resistant iron sheets, and renovating sanitation facilities in informal Kampala settlements.

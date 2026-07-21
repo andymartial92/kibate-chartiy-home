@@ -1,7 +1,7 @@
 import { Cause, DonorRecord, NewsletterSubscriber, ContactMessage, FAQItem, NewsItem, EventItem } from '../types';
 import { INITIAL_CAUSES, EVENTS_DATA, NEWS_DATA } from '../data/mockData';
 
-const CAUSES_KEY = 'kibate_causes_v1';
+const CAUSES_KEY = 'kibate_causes_v3';
 const DONATIONS_KEY = 'kibate_donations_v1';
 const SUBSCRIBERS_KEY = 'kibate_subscribers_v1';
 const MESSAGES_KEY = 'kibate_contact_messages_v1';
