@@ -1,0 +1,6 @@
+{
+  "name": "Jago Welfare",
+  "description": "Jago Welfare - Charity, Crowdfunding and Non-Profit Organization Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

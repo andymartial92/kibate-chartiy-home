@@ -1,0 +1,129 @@
+import { Cause, EventItem, NewsItem, StatItem, Donor } from '../types';
+
+export const INITIAL_CAUSES: Cause[] = [
+  {
+    id: 'cause-1',
+    title: 'Collect fund for drinking water & healthy food',
+    category: 'Food & Water',
+    tag: '#Food & Water',
+    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&q=80&w=800',
+    raised: 1500,
+    goal: 10000,
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.',
+    date: '20 Dec, 2021',
+    author: 'Admin',
+  },
+  {
+    id: 'cause-2',
+    title: 'Give children a good education & better life',
+    category: 'Education',
+    tag: '#Education',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
+    raised: 18000,
+    goal: 20000,
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.',
+    date: '20 Dec, 2021',
+    author: 'Admin',
+  },
+  {
+    id: 'cause-3',
+    title: 'Collect fund for drinking water & healthy food',
+    category: 'Shelter',
+    tag: '#HomeLess & Shelter',
+    image: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&q=80&w=800',
+    raised: 25000,
+    goal: 50000,
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.',
+    date: '20 Dec, 2021',
+    author: 'Admin',
+  },
+];
+
+export const EVENTS_DATA: EventItem[] = [
+  {
+    id: 'event-featured',
+    title: 'Healthy food and nutritions awreness campaign december',
+    tag: '#FoodCamp',
+    dateDay: '20',
+    dateMonth: 'Dec',
+    image: 'https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=800',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor.',
+    location: 'Montgomery, Alabama',
+    time: '8:00 pm',
+    isFeatured: true,
+  },
+  {
+    id: 'event-1',
+    title: 'Run for the senior citizens.',
+    tag: '#FundFolder',
+    dateDay: '22',
+    dateMonth: 'Dec',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor.',
+    location: 'Montgomery, Alabama',
+    time: '8:00 pm',
+  },
+  {
+    id: 'event-2',
+    title: 'Education for all children',
+    tag: '#ChildrenEducation',
+    dateDay: '06',
+    dateMonth: 'Jan',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor.',
+    location: 'Montgomery, Alabama',
+    time: '9:00 am',
+  },
+  {
+    id: 'event-3',
+    title: 'Stop violence against women',
+    tag: '#RightsForWomen',
+    dateDay: '15',
+    dateMonth: 'Jan',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor.',
+    location: 'Montgomery, Alabama',
+    time: '6:00 pm',
+  },
+];
+
+export const NEWS_DATA: NewsItem[] = [
+  {
+    id: 'news-1',
+    title: 'Healthy food and nutrition among all the children',
+    tag: '#Nutrition',
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor...',
+    date: '20 Dec, 2021',
+    author: 'Admin',
+  },
+  {
+    id: 'news-2',
+    title: 'New era for children learning and remove discrimination',
+    tag: '#Education',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor...',
+    date: '20 Dec, 2021',
+    author: 'Admin',
+  },
+  {
+    id: 'news-3',
+    title: 'Ensure pure and mineral drinking water for rural people',
+    tag: '#Water',
+    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&q=80&w=800',
+    description: 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor...',
+    date: '20 Dec, 2021',
+    author: 'Admin',
+  },
+];
+
+export const STATS_DATA: StatItem[] = [
+  { id: 'stat-1', number: 2348, label: 'Total campaign', iconName: 'Megaphone' },
+  { id: 'stat-2', number: 1748, label: 'Satisfied donors', iconName: 'Users' },
+  { id: 'stat-3', number: 4287, label: 'Fund raised', iconName: 'DollarSign' },
+  { id: 'stat-4', number: 1294, label: 'Happy volunteers', iconName: 'HeartHandshake' },
+];
+
+export const RECENT_DONORS: Donor[] = [
+  { name: 'Sarah Jenkins', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=120', amount: 250, timeAgo: '10 mins ago' },
+  { name: 'Michael Chen', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120', amount: 500, timeAgo: '35 mins ago' },
+  { name: 'Emma Watson', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=120', amount: 100, timeAgo: '2 hours ago' },
+  { name: 'David Miller', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=120', amount: 1000, timeAgo: '4 hours ago' },
+];
